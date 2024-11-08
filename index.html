@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Price Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #333333;
+            padding: 20px;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 2em;
+        }
+        section {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .button {
+            background-color: #2196F3;
+            color: #ffffff;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            text-decoration: none;
+        }
+        .footer {
+            background-color: #333333;
+            color: #ffffff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Stock Price Tracker</h1>
+    </header>
+
+    <section>
+        <h2>About the Project</h2>
+        <p>
+            The Stock Price Tracker is a Python-based application that uses Yahoo Finance data to display and compare stock prices for various companies. It provides real-time stock price updates and allows users to select multiple stocks to compare their performance over the past 30 days.
+        </p>
+        
+        <h2>Features</h2>
+        <ul>
+            <li>View the latest stock price for a selected company</li>
+            <li>Compare stock prices for up to 3 companies on a graph</li>
+            <li>Interactive graph with data points and hover annotations</li>
+            <li>Toggle full-screen mode for a detailed view of the stock comparison graph</li>
+        </ul>
+        
+        <h2>How to Use</h2>
+        <p>
+            <strong>Get Single Stock Price:</strong> Select a stock symbol from the dropdown menu, then click "Get Price" to see the latest price.<br>
+            <strong>Compare Multiple Stocks:</strong> Select 2 or 3 stock symbols, then click "Compare Stocks" to view a comparison graph of their performance over the last 30 days.
+        </p>
+        
+        <h2>Python Libraries Used</h2>
+        <ul>
+            <li>Yahoo Finance (yfinance) for retrieving stock data</li>
+            <li>Matplotlib for creating the comparison graph</li>
+            <li>Tkinter for the graphical user interface</li>
+            <li>mplcursors for interactive data points on the graph</li>
+        </ul>
+        
+        <h2>Code Snippet</h2>
+        <pre>
+            <code>
+# Function to fetch stock price for a single symbol and display the latest price
+def get_single_stock_price():
+    stock_symbol = single_stock_var.get()
+    stock = yf.Ticker(stock_symbol)
+    stock_price = stock.history(period="1d")['Close'][0]
+    single_stock_result_label.config(text=f"The latest stock price of {stock_symbol} is: ${stock_price:.2f}")
+            </code>
+        </pre>
+
+        <a class="button" href="git@github.com:tejasav-saxena/stock_tracker.git" target="_blank">Visit Repository</a>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Stock Price Tracker Project. Created by [Tejasav Saxena]</p>
+    </footer>
+</body>
+</html>
